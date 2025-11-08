@@ -29,22 +29,43 @@
 </head>
 
 <body class="privacy-page">
-  <header id="header" class="header d-flex align-items-center sticky-top">
+ <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
       <a href="index.html" class="logo d-flex align-items-center">
         <i class="bi bi-buildings"></i>
-        <h1 class="sitename">Rainedge.Intl</h1>
+        <h1 class="sitename" style="Font: Courier">Rainedge. Intl Center</h1>
       </a>
+
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="admissions.html">Admissions</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="dropdown"><a href="{% url 'about' %}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'admissions' %}">Admissions</a></li>
+              <li><a href="{% url 'academics' %}">Academics</a></li>
+              <li><a href="{% url 'facilities' %}">Campus &amp; Facilities</a></li>
+            </ul>
+          </li>
+
+          <li><a href="{% url 'students' %}">Students Life</a></li>
+          <li><a href="{% url 'news' %}">News</a></li>
+          <li><a href="{% url 'events' %}">Events</a></li>
+          <li><a href="{% url 'alumni' %}">Alumni</a></li>
+          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'privacy' %}">Privacy</a></li>
+              <li><a href="{% url 'services' %}">Terms of Service</a></li>
+              <li><a href="{% url 'four' %}">Error 404</a></li>
+            </ul>
+          </li>
+
+          <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+
     </div>
   </header>
 

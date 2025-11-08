@@ -9,14 +9,13 @@ def about(request):
 def admissions(request):
     return render(request,'admissions.html')
 def services(request):
-    return render(request,'terms-of-service.html')
+    return render(request,'services.html')
 def starter(request):
     return render(request,'starter-page.html')
 def facilities(request):
     return render(request,'campus-facilities.html')
 def events(request):
     return render(request,'events.html')
-
 def news(request):
     return render(request,'news.html')
 def privacy(request):
