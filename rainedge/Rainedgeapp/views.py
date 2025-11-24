@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Admission
 
 def index(request):
     return render(request,'index.html')
@@ -30,5 +31,27 @@ def four(request):
     return render(request,'404.html')
 def academics(request):
     return render(request,'academics.html')
+
+
+def admissions (request):
+    if request.method == "POST" :
+        full_name = request.POST.get("full__name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        program_interest = request.POST.get("program_interest")
+        message = request.POST.get("message")
+
+        Admission.objects.create(
+            full_name=full_name,
+            email=email,
+            phone=phone,
+            program_interest=program_interest,
+            message=message,
+        )
+        return render(request, "admissions.html")
+
+
+
+
 
 

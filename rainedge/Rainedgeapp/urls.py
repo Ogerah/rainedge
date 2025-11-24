@@ -23,7 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
      path('index', views.index, name='index'),
     path('about/', views.about, name='about'),
-    path('admissions/', views.admissions, name='admissions'),
     path('services/', views.services, name='services'),
     path('', views.starter, name='starter'),
     path('campus-facilities/', views.facilities, name='facilities'),
@@ -35,4 +34,6 @@ urlpatterns = [
     path('alumni/', views.alumni, name='alumni'),
     path('404/', views.four, name='four'),
     path('academics/', views.academics, name='academics'),
+     path('admissions/', views.admissions, name='admissions'),
+
 ]

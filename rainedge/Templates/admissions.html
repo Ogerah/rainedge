@@ -343,7 +343,10 @@
               <div class="contact-content">
                 <h3>Connect with Our Admissions Team</h3>
                 <p>Have questions about your application or need personalized guidance? Our dedicated admissions counselors are here to help you navigate the process and make informed decisions about your academic future.</p>
-                <form action="forms/contact.php" class="inquiry-form php-email-form">
+                
+                
+                <form method="POST" action="" class="Admission">
+                  {% csrf_token %}
                   <div class="form-group-row">
                     <div class="form-group">
                       <input type="text" name="name" placeholder="Full Name*" required="">
@@ -357,7 +360,7 @@
                       <input type="tel" name="phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
-                      <select name="subject" required="">
+                      <select name="program_interest" required="">
                         <option selected="" disabled="">Program Interest*</option>
                         <option>Undergraduate</option>
                         <option>Graduate</option>
@@ -378,6 +381,8 @@
                 </form>
               </div>
             </div>
+
+
             <div class="col-lg-5">
               <div class="visit-invitation">
                 <div class="visit-image">
