@@ -1,0 +1,13 @@
+<h2>All Courses</h2>
+<ul>
+    {% for course in courses %}
+    <li>
+        {{ course.name }} -
+        {% if course in enrolled_courses %}
+            Enrolled
+        {% else } 
+           <a href="{% url 'enroll_course' course.id %}">Enroll</a>    
+           {% endif %}
+    </li>
+{% endfor }
+</ul>

@@ -1,0 +1,8 @@
+<h2>My Timetable</h2>
+<ul>
+{% for t in records %}
+    <li>{{ t.course.name }} - {{ t.day_of_week }} {{ t.start_time }} to {{ t.end_time }} ({{ t.room}})</li>
+{% empty %}
+    <li>No Timetable yet.</li>
+{% endfor %}
+</ul>

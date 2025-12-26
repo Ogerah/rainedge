@@ -1,0 +1,8 @@
+<h2>My Grades</h2>
+<ul>
+{% for grade in grades %}
+    <li>{{ grade.course.name }}: {{ grade.score }} ({{ grade.remarks }})</li>
+{% empty %}
+    <li>No grades yet.</li>
+{% endfor %}
+</ul>

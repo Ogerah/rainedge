@@ -3,4 +3,4 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Admission)
-
+admin.site.register(Contact)

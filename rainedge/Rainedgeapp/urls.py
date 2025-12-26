@@ -15,7 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from accounts import views as accounts_views
+
 
 from Rainedgeapp import views
 
@@ -35,5 +39,20 @@ urlpatterns = [
     path('404/', views.four, name='four'),
     path('academics/', views.academics, name='academics'),
      path('admissions/', views.admissions, name='admissions'),
+     path('accounts/', include ('accounts.urls')),
+     path('students/', include('students.urls')),
+     path('teachers/', include('teachers.urls')),
+     path('accounts/teacher-login/', accounts_views.teacher_login, name='teacher_login'),
+     path('courses/', include('courses.urls')),
+     path('grades/', include('grades.urls')),
+     path('attendance/', include('attendance.urls')),
+     path('timetable/', include('timetable.urls')),
+    path('admin-dashboard/',views.admin_dashboard, name='admin_dashboard'),
+
+
+     
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

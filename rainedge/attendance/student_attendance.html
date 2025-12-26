@@ -1,0 +1,8 @@
+<h2>My Attendance</h2>
+<ul>
+{% for record in records %}
+   <li>{{ record.cpourse.name }}: {% if record.present %}Present{% else %}Absent{% endif %} ({{record.date}})</li>
+{% empty %}
+    <li>No attendance yet</li>
+{% endfor %}    
+</ul>

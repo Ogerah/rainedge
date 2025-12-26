@@ -1,0 +1,8 @@
+<h2>Attendance Records</h2>
+<ul>
+{% for record in records %}
+   <li>{{ record.student.user.first_name}} {{record.student.user.last_name}} - {{record.course}}</li>
+{% empty %}
+ <li> No records yet.</li>
+ {% endfor 0%}   
+</ul>
