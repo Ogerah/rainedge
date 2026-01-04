@@ -18,8 +18,8 @@ def admissions(request):
     return render(request,'admissions.html')
 def services(request):
     return render(request,'services.html')
-def starter(request):
-    return render(request,'starter-page.html')
+def secondary(request):
+    return render(request,'secondary.html')
 def facilities(request):
     return render(request,'campus-facilities.html')
 def events(request):
@@ -38,7 +38,8 @@ def four(request):
     return render(request,'404.html')
 def academics(request):
     return render(request,'academics.html')
-
+def primary(request):
+    return render(request,'primary.html')
 
 def admissions (request):
     if request.method == "POST" :
