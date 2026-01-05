@@ -44,19 +44,23 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <i class="bi bi-buildings"></i>
+         <img src="{% static 'assets/img/RIC-SUB-LOGO.png' %}" alt="Rainedge Intl Center Logo" height="40" class="me-2">
         <h1 class="sitename" style="Font: Courier">Rainedge. Intl Center</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="dropdown"><a href="{% url 'index' %}"><span> Our Schools</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'primary' %}">Elementary Section</a></li>
+              <li><a href="{% url 'secondary' %}">HighSchool Section</a></li>
+            </ul>
+          </li>
           <li class="dropdown"><a href="{% url 'about' %}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{% url 'about' %}">About Us</a></li>
               <li><a href="{% url 'admissions' %}">Admissions</a></li>
-              <li><a href="{% url 'academics' %}">Academics</a></li>
-              <li><a href="{% url 'facilities' %}">Campus &amp; Facilities</a></li>
             </ul>
           </li>
 
@@ -190,7 +194,7 @@
           <div class="row align-items-center">
             <div class="col-lg-5">
               <div class="campus-visual">
-                <img src="assets/img/education/campus-5.webp" alt="Campus Facilities" class="main-image img-fluid">
+                <img src="{% static "assets/img/marvinthumbsup.elementary.jpg" %}" alt="School Facilities" class="main-image img-fluid">
                 <div class="floating-stats">
                   <div class="stat-card">
                     <span class="stat-number">8+</span>
@@ -243,10 +247,40 @@
 
       </div>
 
+
     </section><!-- /Leadership Section -->
 
+       </div>
+
+  
+    <section class="story-section py-5">
+      <div class="container">
+        <h2 class="mb-3 text-primary">A little More About Us</h2>
+        <p class="mb-4">
+              Rainedge International is a Christian non-profit organization located in Nakuru, Kenya, dedicated to the important work of alleviating poverty. The organization focuses its efforts on marginalized children and vulnerable youth within the community, with a special emphasis on helping street children find a better life. Committed to its Christian foundation, Rainedge International operates on the principles of compassion and service, offering its assistance to those in need without regard to their religious beliefs, gender, or ethnic background. This commitment to inclusivity ensures that help is available to all who require it, embodying the Christian values that guide the organization's mission. The name "Rainedge" itself carries significant meaning, symbolizing the hope and promise of an end to hardship and difficult times. This name is particularly relevant in the Kenyan context, where the country's agricultural and overall well-being are deeply dependent on rainfall. Just as rain brings life and prosperity to the land, Rainedge International strives to bring renewed hope and opportunities to the lives of the children and youth it serves, marking a turning point where hardship gives way to a brighter future.
+        </p>
+
+
+    <!-- Our Story -->
+
+    <section class="story-section py-5">
+      <div class="container">
+        <h2 class="mb-3 text-primary">Our Story</h2>
+        <p class="mb-4">
+       Driven by a profound sense of compassion and a desire to alleviate suffering, Sammy Omufwoko, the director of Rainedge International, embarked on a life-changing journey in 2006. His inspiration stemmed from witnessing firsthand the immense hardships endured by vulnerable young boys living on the streets of Nakuru. Deeply moved by their plight, he resolved to dedicate his efforts to supporting the poor, orphans, and marginalized members of the community.
+
+
+
+Omufwoko's initial response was to launch a feeding program specifically designed to provide nourishment to impoverished street families. This initiative served as a vital lifeline for those struggling to meet their basic needs. However, his commitment deepened further when several young boys, seeking refuge and a sense of belonging, followed him back to his humble abode. Discovering them sheltering in his makeshift house ignited a new vision within him.
+
+
+
+Inspired by this encounter and recognizing the urgent need for a safe haven, Omufwoko made the decision to establish an orphanage. He began by taking in four boys, providing them with shelter, food, and care. As the organization grew, he observed an increasing number of girls facing similar challenges and vulnerabilities. Recognizing the equal importance of their well-being, he extended the orphanage's mission to include girls, ensuring that both boys and girls had access to the support and opportunities they deserved. </p>
+
+
   </main>
-  <footer id="footer" class="footer-16 footer position-relative dark-background">
+ 
+<footer id="footer" class="footer-16 footer position-relative dark-background">
 
     <div class="container">
 
@@ -256,9 +290,9 @@
           <div class="col-lg-5">
             <div class="brand-section">
               <a href="index.html" class="logo d-flex align-items-center mb-4">
-                <span class="sitename">Rainedge.Intl</span>
+                <span class="sitename">Rainedge.Intl Center</span>
               </a>
-              <p class="brand-description">Crafting exceptional digital experiences through thoughtful design and innovative solutions that elevate your brand presence.</p>
+              <p class="brand-description">Developing Healthy and Working Communities.</p>
             </div>
           </div>
 
@@ -272,9 +306,9 @@
                   <div class="nav-column">
                     <h6>Get in touch</h6>
                     <nav class="footer-nav">
-                      <a href="#">Contacts</a>
-                      <a href="#">Maps and directiions</a>
-                      <a href="#">Available slots</a>
+                      <a href="{% url "contact" %}">Contacts</a>
+                      <a href="{% url "maps" %}">Maps and directions</a>
+                      <a href="{% url "contact" %}">Available jobs? Contact Us</a>
                       
                     </nav>
                   </div>
@@ -282,11 +316,11 @@
 
                 <div class="col-6 col-lg-3">
                   <div class="nav-column">
-                    <h6>Website</h6>
+                    <h6> Our Website's Specs</h6>
                     <nav class="footer-nav">
-                      <a href="#">Accessibility</a>
-                      <a href="#">Digital Accessibility</a>
-                      <a href="#">Privacy Statement</a>
+                      <a href=" {% url "index" %}">Accessibility</a>
+                      <a href="{% url "admissions" %}">Digital Accessibility</a>
+                      <a href="{% url "privacy" %}">Privacy Statement</a>
                      
                     </nav>
                   </div>
@@ -296,9 +330,9 @@
                   <div class="nav-column">
                     <h6>Legal aid</h6>
                     <nav class="footer-nav">
-                      <a href="#">Report an issue</a>
-                      <a href="#">Schedule call</a>
-                      <a href="#">Legal enquires</a>
+                      <a href="{% url "contact" %}">Report an issue</a>
+                      <a href="tel:+254721 334 651" class="call-btn">Schedule call</a>
+                      <a href="{% url "privacy" %}">Legal enquires</a>
                       
                     </nav>
                   </div>
@@ -315,19 +349,12 @@
         <div class="row align-items-center">
 
           <div class="col-lg-6">
-            <div class="social-section">
-              <div class="social-links">
-               
-                <a href="#" aria-label="Instagram" class="social-link">
-                  <i class="bi bi-instagram"></i>
-                  <span>Instagram</span>
-                </a>
-                <a href="#" aria-label="LinkedIn" class="social-link">
-                  <i class="bi bi-linkedin"></i>
-                  <span>LinkedIn</span>
-                </a>
-              </div>
+            <div class="newsletter-section">
+              <h5>Want to reach out?</h5>
+              <p>Click away.</p>
             </div>
+          </div>
+
           </div>
 
         </div>
@@ -342,21 +369,21 @@
 
             <div class="col-lg-6">
               <div class="copyright">
-                <p>© <span class="sitename">Rainedge.Intl</span>. All rights reserved.</p>
+                <p>© <span class="sitename">Rainedge.Intl Center</span>. All rights reserved.</p>
               </div>
             </div>
 
             <div class="col-lg-6">
               <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
+                <a href="{% url "privacy" %}">Privacy Policy</a>
+                <a href="{% url "services" %}">Terms of Service</a>
+                <a href="{% url "privacy" %}">Cookie Policy</a>
                 <div class="credits">
                   <!-- All the links in the footer should remain intact. -->
                   <!-- You can delete the links only if you've purchased the pro version. -->
                   <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                  <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                  Designed by <a href="https://bootstrapmade.com/">Ken Ogera</a>
+                  <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] 
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
                 </div>
               </div>
             </div>
@@ -367,8 +394,6 @@
     </div>
 
   </footer>
-
-
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

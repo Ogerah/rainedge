@@ -36,26 +36,149 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    /* Container */
+.contact-content {
+  background: #f8fbff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+}
+
+/* Headings & text */
+.contact-content h3 {
+  color: #0284c7;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contact-content p {
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Form layout */
+.Admission .form-group-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.Admission .form-group {
+  position: relative;
+  flex: 1;
+}
+
+/* Icons */
+.Admission .input-group-text {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #0284c7;
+  font-size: 1.1rem;
+}
+
+/* Inputs & select */
+.Admission input,
+.Admission select,
+.Admission textarea {
+  width: 100%;
+  padding: 14px 14px 14px 42px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.Admission textarea {
+  padding-left: 14px;
+  resize: none;
+}
+
+/* Focus states */
+.Admission input:focus,
+.Admission select:focus,
+.Admission textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Full width textarea */
+.Admission .full-width {
+  margin-bottom: 25px;
+}
+
+/* Submit button */
+.submit-btn {
+  background: linear-gradient(135deg, #38bdf8, #facc15);
+  color: #1f2933;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(250, 204, 21, 0.4);
+}
+
+/* Messages */
+.loading {
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.error-message {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.sent-message {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .Admission .form-group-row {
+    flex-direction: column;
+  }
+}
+
+  </style>
+
+
 </head>
 
 <body class="admissions-page">
- <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <i class="bi bi-buildings"></i>
+         <img src="{% static 'assets/img/RIC-SUB-LOGO.png' %}" alt="Rainedge Intl Center Logo" height="40" class="me-2">
         <h1 class="sitename" style="Font: Courier">Rainedge. Intl Center</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="dropdown"><a href="{% url 'index' %}"><span> Our Schools</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'primary' %}">Elementary Section</a></li>
+              <li><a href="{% url 'secondary' %}">HighSchool Section</a></li>
+            </ul>
+          </li>
           <li class="dropdown"><a href="{% url 'about' %}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{% url 'about' %}">About Us</a></li>
               <li><a href="{% url 'admissions' %}">Admissions</a></li>
-              <li><a href="{% url 'academics' %}">Academics</a></li>
-              <li><a href="{% url 'facilities' %}">Campus &amp; Facilities</a></li>
             </ul>
           </li>
 
@@ -79,7 +202,7 @@
     </div>
   </header>
 
-  <main class="main">
+<main class="main">
 
     <!-- Page Title -->
     <div class="page-title">
@@ -191,7 +314,7 @@
                   </div>
                   <div class="check-content">
                     <h5>Academic Transcripts</h5>
-                    <p>Official high school or college records</p>
+                    <p>Official high school, primary or college records</p>
                   </div>
                 </div>
                 <div class="checklist-item">
@@ -200,7 +323,7 @@
                   </div>
                   <div class="check-content">
                     <h5>Standardized Tests</h5>
-                    <p>SAT, ACT, or equivalent scores</p>
+                    <p>SAT, ACT, or equivalent scores(For college students)</p>
                   </div>
                 </div>
                 <div class="checklist-item">
@@ -209,7 +332,7 @@
                   </div>
                   <div class="check-content">
                     <h5>Personal Statement</h5>
-                    <p>500-800 word essay on your goals</p>
+                    <p>500-800 word essay on who you are and your goals</p>
                   </div>
                 </div>
                 <div class="checklist-item">
@@ -226,7 +349,7 @@
                     <i class="bi bi-check2"></i>
                   </div>
                   <div class="check-content">
-                    <h5>Portfolio (if applicable)</h5>
+                    <h5>Portfolio (where applicable)</h5>
                     <p>For art, design, and creative programs</p>
                   </div>
                 </div>
@@ -236,7 +359,7 @@
                   </div>
                   <div class="check-content">
                     <h5>Application Fee</h5>
-                    <p>$75 processing fee (waived for qualified students)</p>
+                    <p>Ksh.2,500 processing fee (waived for qualified students)</p>
                   </div>
                 </div>
               </div>
@@ -256,49 +379,60 @@
               <div class="tuition-cards">
                 <div class="tuition-card domestic">
                   <div class="card-header">
-                    <h4>Domestic Students</h4>
+                    <h4>College Students</h4>
                     <span class="program-type">Per Academic Year</span>
                   </div>
                   <div class="pricing-details">
                     <div class="price-item">
                       <span class="label">Undergraduate Tuition</span>
-                      <span class="amount">$34,200</span>
+                      <span class="amount">Ksh.15,000</span>
                     </div>
                     <div class="price-item">
                       <span class="label">Graduate Programs</span>
-                      <span class="amount">$41,800</span>
+                      <span class="amount">Ksh.21,000</span>
                     </div>
                     <div class="price-item">
                       <span class="label">Room &amp; Board</span>
-                      <span class="amount">$14,500</span>
+                      <span class="amount">Ksh.14,000</span>
                     </div>
                   </div>
                 </div>
                 <div class="tuition-card international">
                   <div class="card-header">
-                    <h4>International Students</h4>
+                    <h4>Students</h4>
                     <span class="program-type">Per Academic Year</span>
                   </div>
                   <div class="pricing-details">
                     <div class="price-item">
-                      <span class="label">Undergraduate Tuition</span>
-                      <span class="amount">$44,700</span>
+                      <span class="label">1st Term(Primary)</span>
+                      <span class="amount">Ksh.6,000</span>
                     </div>
                     <div class="price-item">
-                      <span class="label">Graduate Programs</span>
-                      <span class="amount">$52,300</span>
+                      <span class="label">2nd Term(Primary)</span>
+                      <span class="amount">Ksh.13,000</span>
                     </div>
                     <div class="price-item">
-                      <span class="label">Room &amp; Board</span>
-                      <span class="amount">$14,500</span>
+                      <span class="label">3rd Term(Primary)</span>
+                      <span class="amount">Ksh.11,000</span>
+                    </div>
+                      <div class="price-item">
+                      <span class="label">1st Term(Secondary)</span>
+                      <span class="amount">Ksh.11,000</span>
+                    </div>
+                      <div class="price-item">
+                      <span class="label">2nd Term(Secondary)</span>
+                      <span class="amount">Ksh.15,000</span>
+                    </div>
+                      <div class="price-item">
+                      <span class="label">3rd Term(Secondary)</span>
+                      <span class="amount">Ksh.14,000</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="financial-support">
                 <h5>Financial Support Available</h5>
-                <p>Over 80% of students receive financial assistance through scholarships, grants, and work-study programs. Merit scholarships range from $8,000 to full tuition coverage.</p>
-                <a href="#" class="support-link">Explore Financial Aid Options <i class="bi bi-arrow-right"></i></a>
+                <p>Over 80% of students receive financial assistance through scholarships, grants, and work-study programs. Merit scholarships range from Ksh.10,000 to full tuition coverage.</p>
               </div>
             </div>
           </div>
@@ -345,21 +479,25 @@
                 <p>Have questions about your application or need personalized guidance? Our dedicated admissions counselors are here to help you navigate the process and make informed decisions about your academic future.</p>
                 
                 
-                <form method="POST" action="" class="Admission">
+                <form method="POST" action="" role="form" class="Admission">
                   {% csrf_token %}
                   <div class="form-group-row">
                     <div class="form-group">
+                      <span class="input-group-text"><i class="bi bi-person"></i></span>
                       <input type="text" name="name" placeholder="Full Name*" required="">
                     </div>
                     <div class="form-group">
+                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email Address*" required="">
                     </div>
                   </div>
                   <div class="form-group-row">
                     <div class="form-group">
+                      <span class="input-group-text"><i class="bi bi-phone"></i></span>
                       <input type="tel" name="phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
+                      <span class="input-group-text"><i class="bi bi-list"></i></span>
                       <select name="program_interest" required="">
                         <option selected="" disabled="">Program Interest*</option>
                         <option>Undergraduate</option>
@@ -429,6 +567,7 @@
     </section><!-- /Admissions Section -->
 
   </main>
+
 <footer id="footer" class="footer-16 footer position-relative dark-background">
 
     <div class="container">
@@ -439,9 +578,9 @@
           <div class="col-lg-5">
             <div class="brand-section">
               <a href="index.html" class="logo d-flex align-items-center mb-4">
-                <span class="sitename">Rainedge.Intl</span>
+                <span class="sitename">Rainedge.Intl Center</span>
               </a>
-              <p class="brand-description">Crafting exceptional digital experiences through thoughtful design and innovative solutions that elevate your brand presence.</p>
+              <p class="brand-description">Developing Healthy and Working Communities.</p>
             </div>
           </div>
 
@@ -455,9 +594,9 @@
                   <div class="nav-column">
                     <h6>Get in touch</h6>
                     <nav class="footer-nav">
-                      <a href="#">Contacts</a>
-                      <a href="#">Maps and directiions</a>
-                      <a href="#">Available jobs</a>
+                      <a href="{% url "contact" %}">Contacts</a>
+                      <a href="{% url "maps" %}">Maps and directions</a>
+                      <a href="{% url "contact" %}">Available jobs? Contact Us</a>
                       
                     </nav>
                   </div>
@@ -465,11 +604,11 @@
 
                 <div class="col-6 col-lg-3">
                   <div class="nav-column">
-                    <h6>Website</h6>
+                    <h6> Our Website's Specs</h6>
                     <nav class="footer-nav">
-                      <a href="#">Accessibility</a>
-                      <a href="#">Digital Accessibility</a>
-                      <a href="#">Privacy Statement</a>
+                      <a href=" {% url "index" %}">Accessibility</a>
+                      <a href="{% url "admissions" %}">Digital Accessibility</a>
+                      <a href="{% url "privacy" %}">Privacy Statement</a>
                      
                     </nav>
                   </div>
@@ -479,9 +618,9 @@
                   <div class="nav-column">
                     <h6>Legal aid</h6>
                     <nav class="footer-nav">
-                      <a href="#">Report an issue</a>
-                      <a href="#">Schedule call</a>
-                      <a href="#">Legal enquires</a>
+                      <a href="{% url "contact" %}">Report an issue</a>
+                      <a href="tel:+254721 334 651" class="call-btn">Schedule call</a>
+                      <a href="{% url "privacy" %}">Legal enquires</a>
                       
                     </nav>
                   </div>
@@ -504,27 +643,6 @@
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="social-section">
-              <div class="social-links">
-                <a href="#" aria-label="Dribbble" class="social-link">
-                  <i class="bi bi-dribbble"></i>
-                  <span>Dribbble</span>
-                </a>
-                <a href="#" aria-label="Behance" class="social-link">
-                  <i class="bi bi-behance"></i>
-                  <span>Behance</span>
-                </a>
-                <a href="#" aria-label="Instagram" class="social-link">
-                  <i class="bi bi-instagram"></i>
-                  <span>Instagram</span>
-                </a>
-                <a href="#" aria-label="LinkedIn" class="social-link">
-                  <i class="bi bi-linkedin"></i>
-                  <span>LinkedIn</span>
-                </a>
-              </div>
-            </div>
           </div>
 
         </div>
@@ -539,21 +657,21 @@
 
             <div class="col-lg-6">
               <div class="copyright">
-                <p>© <span class="sitename">Rainedge.Intl</span>. All rights reserved.</p>
+                <p>© <span class="sitename">Rainedge.Intl Center</span>. All rights reserved.</p>
               </div>
             </div>
 
             <div class="col-lg-6">
               <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
+                <a href="{% url "privacy" %}">Privacy Policy</a>
+                <a href="{% url "services" %}">Terms of Service</a>
+                <a href="{% url "privacy" %}">Cookie Policy</a>
                 <div class="credits">
                   <!-- All the links in the footer should remain intact. -->
                   <!-- You can delete the links only if you've purchased the pro version. -->
                   <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                  <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] 
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
                 </div>
               </div>
             </div>
@@ -563,8 +681,7 @@
       </div>
     </div>
 
-  </footer>
-  <!-- Scroll Top -->
+  </footer>  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->

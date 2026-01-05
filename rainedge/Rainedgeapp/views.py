@@ -40,6 +40,8 @@ def academics(request):
     return render(request,'academics.html')
 def primary(request):
     return render(request,'primary.html')
+def maps(request):
+    return render(request,'maps.html')
 
 def admissions (request):
     if request.method == "POST" :

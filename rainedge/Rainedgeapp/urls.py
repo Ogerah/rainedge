@@ -39,6 +39,7 @@ urlpatterns = [
     path('404/', views.four, name='four'),
     path('academics/', views.academics, name='academics'),
     path('primary/', views.primary, name='primary'),
+    path('maps/', views.maps, name='maps'),
      path('admissions/', views.admissions, name='admissions'),
      path('accounts/', include ('accounts.urls')),
      path('students/', include('students.urls')),
@@ -48,7 +49,7 @@ urlpatterns = [
      path('grades/', include('grades.urls')),
      path('attendance/', include('attendance.urls')),
      path('timetable/', include('timetable.urls')),
-    path('admin-dashboard/',views.admin_dashboard, name='admin_dashboard'),
+     path('admin-dashboard/',views.admin_dashboard, name='admin_dashboard'),
 
 
      
