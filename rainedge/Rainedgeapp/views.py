@@ -40,6 +40,8 @@ def academics(request):
     return render(request,'academics.html')
 def primary(request):
     return render(request,'primary.html')
+def college(request):
+    return render(request,'college.html')
 def maps(request):
     return render(request,'maps.html')
 
@@ -91,7 +93,7 @@ def admin_dashboard(request):
     total_courses = Course.objects.count()
     total_grades = Grade.objects.count()
 
-    return render(request, 'portal/admin_dashboard.html',{
+    return render(request, 'admin_dashboard.html',{
             'total_students': total_students,
             'total_teachers': total_teachers,
             'total_courses': total_courses,
